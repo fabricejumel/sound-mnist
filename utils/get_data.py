@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 
 def get_all():
     mfccs, labels = utils.wav2mfcc.get_data()
-
+    # The shape of an array is the number of elements in each dimension.
     dim_1 = mfccs.shape[1]
     dim_2 = mfccs.shape[2]
     channels = 1
