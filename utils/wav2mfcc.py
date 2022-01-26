@@ -5,7 +5,9 @@ from keras.utils import to_categorical
 
 def wav2mfcc(file_path, max_pad_len=20):
     wave, sr = librosa.load(file_path, mono=True, sr=None)
+    #  resample just keep 1/3
     wave = wave[::3]
+    # resample to 8khZ
     mfcc = librosa.feature.mfcc(wave, sr=8000)
     pad_width = max_pad_len - mfcc.shape[1]
     mfcc = np.pad(mfcc, pad_width=((0, 0), (0, pad_width)), mode='constant')
