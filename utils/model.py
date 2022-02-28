@@ -29,7 +29,7 @@ def get_cnn_model(input_shape, num_classes):
     model.add(BatchNormalization())
     model.add(Dropout(0.4))
     model.add(Dense(num_classes, activation='softmax'))
-    model.compile(loss=tf.keras.losses.categorical_crossentropy, optimizer=tf.keras.optimizers.Adadelta(), metrics=['accuracy'])
+    model.compile(loss=tf.keras.losses.categorical_crossentropy, optimizer=tf.optimizers.Adadelta, metrics=['accuracy'])
 
     return model
 
