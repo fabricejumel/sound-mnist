@@ -1,7 +1,8 @@
 import numpy as np
 import librosa
 import os
-from keras.utils import to_categorical
+#from keras.utils import to_categorical
+from tensorflow.keras.utils import to_categorical
 
 def wav2mfcc(file_path, max_pad_len=20):
     wave, sr = librosa.load(file_path, mono=True, sr=None)
